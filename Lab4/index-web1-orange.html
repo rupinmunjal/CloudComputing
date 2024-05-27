@@ -1,0 +1,29 @@
+﻿<html>
+    <head>
+        <title>Lab 4</title>
+    </head>
+    <body>
+        <h1>TELE20483</h1>
+        <p>Cloud Enabled Networks</p>
+	<img src="MapleLeaf.jpg" width=500>
+
+        <div id="fetch">
+            <script>
+                var fetch = document.getElementById("fetch");
+
+                fetch('https://rupinlab4.s3.amazonaws.com/your-html-file.html')
+                    .then((response) => {
+                        return response.text();
+                    })
+                    .then((html) => {
+                        fetch.innerHTML = html;
+
+                        var image = fetch.querySelector('img');
+                        if (image) {
+                            image.src = 'https://rupinlab4.s3.amazonaws.com/MapleLeafBlue.jpg';
+                        }
+                    })
+            </script>
+        </div>
+    </body>
+</html>
